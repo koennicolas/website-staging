@@ -37,23 +37,4 @@ document.addEventListener('DOMContentLoaded', function () {
     box.addEventListener('mouseleave', start);
     start();
   });
-
-  // Werkwijze: aanklikbare tabbladen
-  var tabs = document.querySelectorAll('.werkwijze-tab');
-  if (tabs.length) {
-    tabs.forEach(function (tab) {
-      tab.addEventListener('click', function () {
-        var target = tab.getAttribute('data-target');
-        tabs.forEach(function (t) {
-          t.classList.remove('active');
-          t.setAttribute('aria-selected', 'false');
-        });
-        tab.classList.add('active');
-        tab.setAttribute('aria-selected', 'true');
-        document.querySelectorAll('.werkwijze-panel').forEach(function (panel) {
-          panel.classList.toggle('active', panel.id === target);
-        });
-      });
-    });
-  }
 });

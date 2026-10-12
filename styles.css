@@ -89,16 +89,16 @@ nav.main-nav a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 42px;
+  width: 23px;
   height: auto;
-  max-height: 78px;
+  max-height: 44px;
   object-fit: contain;
   z-index: 20;
   pointer-events: none;
   opacity: 0.96;
 }
 @media (max-width: 900px) {
-  .floating-logo { width: 32px; max-height: 58px; }
+  .floating-logo { width: 19px; max-height: 36px; }
 }
 
 /* ---------- Hero (home) ---------- */
@@ -123,18 +123,6 @@ nav.main-nav a:hover {
   letter-spacing: 0.04em;
   color: var(--accent);
 }
-.hero-cta {
-  display: inline-block;
-  margin-top: 28px;
-  font-size: 12.5px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--ink);
-  border-bottom: 1px solid var(--ink-faint);
-  padding-bottom: 3px;
-  transition: border-color 0.2s ease, color 0.2s ease;
-}
-.hero-cta:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ---------- Minimal footer ---------- */
 footer.site-footer-min {
@@ -179,8 +167,10 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
 }
 .project-card { display: block; }
 .project-card .thumb { aspect-ratio: 4/3; overflow: hidden; background: #ece9dd; filter: grayscale(0.15); }
-.project-card .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center 80%; display: block; transition: transform 0.5s ease; }
+.project-card .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
 .project-card:hover .thumb img { transform: scale(1.02); }
+/* bloem beter in beeld: uitsnede iets naar beneden */
+.project-card .thumb img.pos-bloem { object-position: 50% 85%; }
 .project-card .meta {
   display: flex;
   justify-content: space-between;
@@ -320,87 +310,6 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
 .project-gallery .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ---------- Werkwijze ---------- */
-
-/* Lanceringstarief banner */
-.launch-banner {
-  max-width: var(--max);
-  margin: 0 auto 40px;
-  padding: 18px var(--gutter);
-  background: #f4f2e9;
-  border: 1px solid var(--accent);
-}
-.launch-banner-text { font-size: 14px; }
-.launch-banner-text strong { color: var(--accent); }
-.launch-banner-note {
-  margin: 6px 0 0;
-  font-size: 12.5px;
-  color: var(--ink-soft);
-}
-
-/* Clickable tab chooser */
-.werkwijze-tabs {
-  max-width: var(--max);
-  margin: 0 auto;
-  padding: 0 var(--gutter) 56px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
-}
-.werkwijze-tab {
-  display: block;
-  text-align: left;
-  width: 100%;
-  padding: 20px 16px;
-  border: 1px solid var(--line);
-  background: transparent;
-  font-family: var(--font);
-  cursor: pointer;
-  transition: border-color 0.2s ease, background 0.2s ease;
-}
-.werkwijze-tab:hover { border-color: var(--accent); }
-.werkwijze-tab.active {
-  border-color: var(--ink);
-  background: var(--paper);
-  box-shadow: inset 0 -3px 0 var(--accent);
-}
-.werkwijze-tab .tab-num {
-  display: block;
-  font-size: 11px;
-  color: var(--accent);
-  letter-spacing: 0.05em;
-  margin-bottom: 8px;
-}
-.werkwijze-tab .tab-title {
-  display: block;
-  font-size: 13.5px;
-  letter-spacing: 0.02em;
-  text-transform: uppercase;
-  color: var(--ink);
-  margin-bottom: 4px;
-}
-.werkwijze-tab .tab-sub {
-  display: block;
-  font-size: 12px;
-  color: var(--ink-soft);
-}
-@media (max-width: 900px) {
-  .werkwijze-tabs { grid-template-columns: 1fr; }
-}
-
-.werkwijze-panel { display: none; }
-.werkwijze-panel.active { display: block; }
-
-.werkwijze-group-title {
-  max-width: 780px;
-  font-size: 18px;
-  font-weight: 400;
-  text-transform: uppercase;
-  letter-spacing: 0.02em;
-  margin: 0 0 4px;
-  padding-top: 8px;
-}
-.werkwijze-group-note { max-width: 780px; font-size: 13.5px; color: var(--ink-soft); margin: 0 0 4px; }
-
 .werkwijze-list { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) 100px; }
 .werkwijze-list .werkwijze-fase { max-width: 780px; }
 .werkwijze-fase { padding: 28px 0; border-top: 1px solid var(--line); }
@@ -412,13 +321,35 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
 .fase-content li { font-size: 13.5px; color: var(--ink-soft); margin-bottom: 6px; }
 .fase-note { margin: 10px 0 0; font-size: 12.5px; font-style: italic; color: var(--ink-faint); max-width: 60ch; }
 
+/* Werkwijze: drie keuzes */
+.werkwijze-intro { max-width: var(--max); margin: -12px auto 0; padding: 0 var(--gutter) 36px; }
+.werkwijze-intro p { font-size: 14px; color: var(--ink-soft); max-width: 60ch; margin: 0; }
+.werkwijze-optie { margin-bottom: 64px; }
+.werkwijze-optie:last-child { margin-bottom: 0; }
+.optie-head { max-width: 780px; padding-bottom: 18px; }
+.optie-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
+.optie-title { font-size: clamp(19px, 2.2vw, 24px); font-weight: 700; margin: 4px 0 6px; }
+.optie-sub { font-size: 13.5px; color: var(--ink-soft); margin: 0; max-width: 60ch; }
+.fase-head h3 { font-size: 15px; font-weight: 700; margin: 0; }
+.fase-label { font-size: 13.5px; color: var(--ink-soft); margin: 12px 0 0; }
+.fase-label + ul { margin-top: 6px; }
+.werkwijze-optie .werkwijze-fase:last-child { border-bottom: 1px solid var(--line); }
+
 /* ---------- About ---------- */
 .about-page {
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 var(--gutter) 90px;
 }
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 700px) minmax(0, 360px);
+  gap: 56px;
+  align-items: start;
+}
 .about-copy { max-width: 700px; }
+.about-photo { aspect-ratio: 1/1; overflow: hidden; background: #ece9dd; }
+.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .about-title {
   padding: 64px 0 36px;
 }
@@ -429,7 +360,7 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
   margin: 0;
   text-transform: uppercase;
 }
-.about-copy section { margin: 0 0 18px; }
+.about-copy section { margin: 0 0 22px; }
 .about-copy section:last-child { margin-bottom: 0; }
 .about-copy h2 {
   font-size: 14px;
@@ -437,8 +368,8 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
   margin: 0 0 2px;
 }
 .about-copy p {
-  font-size: 13px;
-  line-height: 1.32;
+  font-size: 13.5px;
+  line-height: 1.5;
   color: var(--ink-soft);
   margin: 0;
 }
@@ -447,7 +378,6 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
 .contact-body { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) 100px; min-height: calc(50vh + 40px); }
 .contact-body .org { font-size: 14px; margin-bottom: 22px; }
 .contact-body .field { font-size: 14px; margin-bottom: 6px; }
-.contact-body .field-kvk { margin-top: 16px; color: var(--ink-faint); font-size: 12.5px; }
 .contact-body a { border-bottom: 1px solid var(--ink-faint); }
 .contact-body a:hover { border-bottom-color: var(--accent); color: var(--accent); }
 
@@ -455,6 +385,8 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
 @media (max-width: 900px) {
   :root { --gutter: 24px; }
   .intro-grid { grid-template-columns: 1fr; gap: 28px; }
+  .about-layout { grid-template-columns: 1fr; gap: 28px; }
+  .about-photo { order: -1; max-width: 420px; }
   .story-section, .story-section.reverse { grid-template-columns: 1fr; gap: 20px; }
   .story-section.reverse .story-text, .story-section.reverse .story-image { order: initial; }
   .reviews { grid-template-columns: 1fr; gap: 24px; }
@@ -468,3 +400,39 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
   nav.main-nav.open { display: flex; }
   .menu-toggle { display: block; }
 }
+
+
+/* ---------- Werkwijze: vier duidelijke keuzes en compacte pakketten ---------- */
+.keuze-grid { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) 54px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
+.keuze-kaart { display:flex; flex-direction:column; min-height:220px; padding:22px 20px 20px; border:1px solid var(--line); color:var(--ink); text-decoration:none; background:#fbfaf6; transition:background .2s ease, border-color .2s ease, transform .2s ease; }
+.keuze-kaart:hover, .keuze-kaart:focus-visible { background:#f0efe7; border-color:var(--accent); transform:translateY(-2px); }
+.keuze-nummer, .pakket-label, .banner-kicker { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); }
+.keuze-kaart h2 { font-size:17px; line-height:1.3; font-weight:600; margin:24px 0 10px; }
+.keuze-kaart p { font-size:13px; line-height:1.6; color:var(--ink-soft); margin:0 0 22px; }
+.keuze-link { margin-top:auto; font-size:12px; }
+.keuze-kaart-highlight { background:#eeefe7; border-color:#c8cbbb; }
+.lancering-banner { max-width:calc(var(--max) - 2 * var(--gutter)); margin:0 auto 76px; padding:30px 34px; background:#e9ebdf; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+.lancering-banner h2 { font-size:clamp(20px,2.5vw,27px); font-weight:500; margin:8px 0 10px; }
+.lancering-banner p { font-size:14px; color:var(--ink-soft); margin:0 0 8px; }
+.lancering-banner .banner-small { font-size:12px; max-width:72ch; margin-bottom:0; }
+.banner-cta, .pakket-cta { display:inline-block; align-self:flex-start; border:1px solid var(--ink); color:var(--ink); text-decoration:none; padding:12px 16px; font-size:12px; white-space:nowrap; transition:background .2s,color .2s; }
+.banner-cta:hover, .pakket-cta:hover { background:var(--ink); color:#fff; }
+.pakket-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; max-width:900px; }
+.pakket-kaart { border:1px solid var(--line); padding:28px; display:flex; flex-direction:column; align-items:flex-start; }
+.pakket-kaart-featured { background:#f5f4ed; border-color:#c8cbbb; }
+.pakket-kaart h3 { font-size:21px; line-height:1.3; margin:12px 0 8px; }
+.pakket-prijs { font-size:30px!important; color:var(--ink)!important; margin:0 0 16px!important; }
+.pakket-prijs small { font-size:12px; color:var(--ink-faint); }
+.pakket-kaart p, .pakket-kaart li { font-size:13.5px; color:var(--ink-soft); line-height:1.6; }
+.pakket-kaart ul { padding-left:18px; margin:4px 0 18px; }
+.pakket-kaart li { margin-bottom:6px; }
+.pakket-voorwaarde { font-size:12px!important; font-style:italic; margin-top:auto; padding-top:10px; }
+.pakket-kaart .pakket-cta { margin-top:18px; }
+.compact-aanvullend { margin-top:32px; }
+.werkwijze-afsluiting { margin-top:60px; padding:30px; background:#f7f6f1; max-width:900px; }
+.werkwijze-afsluiting h2 { font-size:22px; font-weight:500; margin:0 0 8px; }
+.werkwijze-afsluiting p { font-size:13.5px; color:var(--ink-soft); }
+.hero-cta { display:inline-flex; gap:12px; align-items:center; margin-top:26px; padding:12px 17px; border:1px solid currentColor; color:inherit; text-decoration:none; font-size:12px; letter-spacing:.02em; transition:background .2s,color .2s; }
+.hero-cta:hover { background:var(--ink); color:#fff; }
+@media (max-width: 900px) { .keuze-grid { grid-template-columns:repeat(2,minmax(0,1fr)); } .lancering-banner { margin-left:var(--gutter); margin-right:var(--gutter); } }
+@media (max-width: 600px) { .keuze-grid { grid-template-columns:1fr; gap:10px; } .keuze-kaart { min-height:0; } .keuze-kaart h2 { margin-top:14px; } .lancering-banner { padding:24px 20px; flex-direction:column; align-items:flex-start; } .pakket-grid { grid-template-columns:1fr; } .pakket-kaart { padding:23px; } .werkwijze-afsluiting { padding:24px 20px; } }
