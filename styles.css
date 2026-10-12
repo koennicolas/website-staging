@@ -89,16 +89,16 @@ nav.main-nav a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 23px;
+  width: 42px;
   height: auto;
-  max-height: 44px;
+  max-height: 78px;
   object-fit: contain;
   z-index: 20;
   pointer-events: none;
   opacity: 0.96;
 }
 @media (max-width: 900px) {
-  .floating-logo { width: 19px; max-height: 36px; }
+  .floating-logo { width: 32px; max-height: 58px; }
 }
 
 /* ---------- Hero (home) ---------- */
@@ -123,6 +123,18 @@ nav.main-nav a:hover {
   letter-spacing: 0.04em;
   color: var(--accent);
 }
+.hero-cta {
+  display: inline-block;
+  margin-top: 28px;
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink);
+  border-bottom: 1px solid var(--ink-faint);
+  padding-bottom: 3px;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+.hero-cta:hover { border-color: var(--accent); color: var(--accent); }
 
 /* ---------- Minimal footer ---------- */
 footer.site-footer-min {
@@ -167,10 +179,8 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
 }
 .project-card { display: block; }
 .project-card .thumb { aspect-ratio: 4/3; overflow: hidden; background: #ece9dd; filter: grayscale(0.15); }
-.project-card .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.5s ease; }
+.project-card .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center 80%; display: block; transition: transform 0.5s ease; }
 .project-card:hover .thumb img { transform: scale(1.02); }
-/* bloem beter in beeld: uitsnede iets naar beneden */
-.project-card .thumb img.pos-bloem { object-position: 50% 85%; }
 .project-card .meta {
   display: flex;
   justify-content: space-between;
@@ -310,6 +320,87 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
 .project-gallery .gallery-item img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
 /* ---------- Werkwijze ---------- */
+
+/* Lanceringstarief banner */
+.launch-banner {
+  max-width: var(--max);
+  margin: 0 auto 40px;
+  padding: 18px var(--gutter);
+  background: #f4f2e9;
+  border: 1px solid var(--accent);
+}
+.launch-banner-text { font-size: 14px; }
+.launch-banner-text strong { color: var(--accent); }
+.launch-banner-note {
+  margin: 6px 0 0;
+  font-size: 12.5px;
+  color: var(--ink-soft);
+}
+
+/* Clickable tab chooser */
+.werkwijze-tabs {
+  max-width: var(--max);
+  margin: 0 auto;
+  padding: 0 var(--gutter) 56px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 12px;
+}
+.werkwijze-tab {
+  display: block;
+  text-align: left;
+  width: 100%;
+  padding: 20px 16px;
+  border: 1px solid var(--line);
+  background: transparent;
+  font-family: var(--font);
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+.werkwijze-tab:hover { border-color: var(--accent); }
+.werkwijze-tab.active {
+  border-color: var(--ink);
+  background: var(--paper);
+  box-shadow: inset 0 -3px 0 var(--accent);
+}
+.werkwijze-tab .tab-num {
+  display: block;
+  font-size: 11px;
+  color: var(--accent);
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+.werkwijze-tab .tab-title {
+  display: block;
+  font-size: 13.5px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.werkwijze-tab .tab-sub {
+  display: block;
+  font-size: 12px;
+  color: var(--ink-soft);
+}
+@media (max-width: 900px) {
+  .werkwijze-tabs { grid-template-columns: 1fr; }
+}
+
+.werkwijze-panel { display: none; }
+.werkwijze-panel.active { display: block; }
+
+.werkwijze-group-title {
+  max-width: 780px;
+  font-size: 18px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0 0 4px;
+  padding-top: 8px;
+}
+.werkwijze-group-note { max-width: 780px; font-size: 13.5px; color: var(--ink-soft); margin: 0 0 4px; }
+
 .werkwijze-list { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) 100px; }
 .werkwijze-list .werkwijze-fase { max-width: 780px; }
 .werkwijze-fase { padding: 28px 0; border-top: 1px solid var(--line); }
@@ -321,35 +412,13 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
 .fase-content li { font-size: 13.5px; color: var(--ink-soft); margin-bottom: 6px; }
 .fase-note { margin: 10px 0 0; font-size: 12.5px; font-style: italic; color: var(--ink-faint); max-width: 60ch; }
 
-/* Werkwijze: drie keuzes */
-.werkwijze-intro { max-width: var(--max); margin: -12px auto 0; padding: 0 var(--gutter) 36px; }
-.werkwijze-intro p { font-size: 14px; color: var(--ink-soft); max-width: 60ch; margin: 0; }
-.werkwijze-optie { margin-bottom: 64px; }
-.werkwijze-optie:last-child { margin-bottom: 0; }
-.optie-head { max-width: 780px; padding-bottom: 18px; }
-.optie-label { font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); }
-.optie-title { font-size: clamp(19px, 2.2vw, 24px); font-weight: 700; margin: 4px 0 6px; }
-.optie-sub { font-size: 13.5px; color: var(--ink-soft); margin: 0; max-width: 60ch; }
-.fase-head h3 { font-size: 15px; font-weight: 700; margin: 0; }
-.fase-label { font-size: 13.5px; color: var(--ink-soft); margin: 12px 0 0; }
-.fase-label + ul { margin-top: 6px; }
-.werkwijze-optie .werkwijze-fase:last-child { border-bottom: 1px solid var(--line); }
-
 /* ---------- About ---------- */
 .about-page {
   max-width: var(--max);
   margin: 0 auto;
   padding: 0 var(--gutter) 90px;
 }
-.about-layout {
-  display: grid;
-  grid-template-columns: minmax(0, 700px) minmax(0, 360px);
-  gap: 56px;
-  align-items: start;
-}
 .about-copy { max-width: 700px; }
-.about-photo { aspect-ratio: 1/1; overflow: hidden; background: #ece9dd; }
-.about-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 .about-title {
   padding: 64px 0 36px;
 }
@@ -360,7 +429,7 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
   margin: 0;
   text-transform: uppercase;
 }
-.about-copy section { margin: 0 0 22px; }
+.about-copy section { margin: 0 0 18px; }
 .about-copy section:last-child { margin-bottom: 0; }
 .about-copy h2 {
   font-size: 14px;
@@ -368,8 +437,8 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
   margin: 0 0 2px;
 }
 .about-copy p {
-  font-size: 13.5px;
-  line-height: 1.5;
+  font-size: 13px;
+  line-height: 1.32;
   color: var(--ink-soft);
   margin: 0;
 }
@@ -378,6 +447,7 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
 .contact-body { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) 100px; min-height: calc(50vh + 40px); }
 .contact-body .org { font-size: 14px; margin-bottom: 22px; }
 .contact-body .field { font-size: 14px; margin-bottom: 6px; }
+.contact-body .field-kvk { margin-top: 16px; color: var(--ink-faint); font-size: 12.5px; }
 .contact-body a { border-bottom: 1px solid var(--ink-faint); }
 .contact-body a:hover { border-bottom-color: var(--accent); color: var(--accent); }
 
@@ -385,8 +455,6 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
 @media (max-width: 900px) {
   :root { --gutter: 24px; }
   .intro-grid { grid-template-columns: 1fr; gap: 28px; }
-  .about-layout { grid-template-columns: 1fr; gap: 28px; }
-  .about-photo { order: -1; max-width: 420px; }
   .story-section, .story-section.reverse { grid-template-columns: 1fr; gap: 20px; }
   .story-section.reverse .story-text, .story-section.reverse .story-image { order: initial; }
   .reviews { grid-template-columns: 1fr; gap: 24px; }
