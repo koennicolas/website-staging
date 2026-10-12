@@ -404,11 +404,11 @@ footer.site-footer-min a:hover { border-bottom-color: var(--accent); color: var(
 
 /* ---------- Werkwijze: vier duidelijke keuzes en compacte pakketten ---------- */
 .keuze-grid { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter) 54px; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; }
-.keuze-kaart { display:flex; flex-direction:column; min-height:220px; padding:22px 20px 20px; border:1px solid var(--line); color:var(--ink); text-decoration:none; background:#fbfaf6; transition:background .2s ease, border-color .2s ease, transform .2s ease; }
+.keuze-kaart { display:flex; flex-direction:column; min-height:0; padding:16px 18px 16px; border:1px solid var(--line); color:var(--ink); text-decoration:none; background:#fbfaf6; transition:background .2s ease, border-color .2s ease, transform .2s ease; }
 .keuze-kaart:hover, .keuze-kaart:focus-visible { background:#f0efe7; border-color:var(--accent); transform:translateY(-2px); }
 .keuze-nummer, .pakket-label, .banner-kicker { font-size:10px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); }
-.keuze-kaart h2 { font-size:17px; line-height:1.3; font-weight:600; margin:24px 0 10px; }
-.keuze-kaart p { font-size:13px; line-height:1.6; color:var(--ink-soft); margin:0 0 22px; }
+.keuze-kaart h2 { font-size:17px; line-height:1.3; font-weight:600; margin:12px 0 6px; }
+.keuze-kaart p { font-size:13px; line-height:1.6; color:var(--ink-soft); margin:0 0 14px; }
 .keuze-link { margin-top:auto; font-size:12px; }
 .keuze-kaart-highlight { background:#eeefe7; border-color:#c8cbbb; }
 .lancering-banner { max-width:calc(var(--max) - 2 * var(--gutter)); margin:0 auto 76px; padding:30px 34px; background:#e9ebdf; display:flex; align-items:center; justify-content:space-between; gap:28px; }
